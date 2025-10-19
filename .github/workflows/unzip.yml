@@ -1,0 +1,91 @@
+name: Extract ZIP to repo
+
+on:
+  push:
+    paths:
+      - 'FebryWesker-main.zip'     # otomatis jalan saat ZIP ini diupload/diubah
+  workflow_dispatch:               # bisa dijalankan manual lewat tab Actions
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List repo root (debug)
+        run: |
+          echo "== Current directory ==" && pwd
+          echo "== Files ==" && ls -lah
+
+      - name: Install unzip & git-lfs
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip git-lfs
+          git lfs install
+          git lfs fetch || true
+          git lfs pull || true
+
+      - name: Set ZIP path
+        run: echo "ZIP=FebryWesker-main.zip" >> $GITHUB_ENV
+
+      - name: Verify ZIP exists
+        run: |
+          if [ ! -f "$ZIP" ]; then
+            echo "::error::File $ZIP tidak ditemukan di root repo!"
+            exit 1
+          fi
+          echo "Found $ZIP (size: $(du -h "$ZIP" | cut -f1))"
+
+      - name: Extract ZIP file
+        run: |
+          mkdir -p extracted
+          unzip -o "$ZIP" -d extracted
+          echo "Isi folder extracted:"
+          ls -lah extracted
+
+          shopt -s dotglob
+          first=$(ls -1 extracted | head -1 || true)
+          count=$(ls -1 extracted | wc -l || echo 0)
+
+          if [ -n "$first" ] && [ -d "extracted/$first" ] && [ "$count" -eq 1 ]; then
+            echo "Satu folder utama terdeteksi ($first), memindahkan isinya ke root..."
+            mv -f extracted/$first/* .
+          else
+            echo "Beberapa file di root ZIP, memindahkan semuanya..."
+            mv -f extracted/* .
+          fi
+
+          rm -rf extracted "$ZIP"
+
+      - name: Commit & Push hasil ekstrak
+        id: commitpush
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "Tidak ada perubahan untuk dikomit."
+            exit 0
+          fi
+
+          git add -A
+          git commit -m "✅ Auto-extracted FebryWesker-main.zip via GitHub Actions"
+          git push origin HEAD:main
+
+      - name: Buat Pull Request jika push gagal (branch dilindungi)
+        if: steps.commitpush.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Auto-unzip FebryWesker-main.zip via GitHub Actions"
+          title: "Auto unzip: FebryWesker-main.zip"
+          body: "Branch main dilindungi, jadi workflow membuat PR otomatis."
+          branch: unzip-auto/${{ github.run_id }}
+          delete-branch: true
