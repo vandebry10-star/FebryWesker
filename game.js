@@ -7,11 +7,11 @@
   // ====== KONFIGURASI GAME (gunakan setelanmu) ======
   const GRAVITY       = 0.30;  // jatuh lebih pelan
   const JUMP_VELOCITY = -7.7;  // dorongan loncat
-  const PIPE_SPEED    = 3.0;   // kecepatan pipa
+  const PIPE_SPEED    = 2.0;   // kecepatan pipa
   const GAP_HEIGHT    = 160;   // celah
   const PIPE_WIDTH    = 60;    // lebar pipa
   const PIPE_SPACING  = 600;   // jarak antar pipa
-  const REWARD_SCORE  = 50;    // ambang reward (teks di Game Over)
+  const REWARD_SCORE  = 75;    // ambang reward (teks di Game Over)
 
   // ====== KANVAS & SKALA 9:16 ======
   const canvas = document.getElementById('game');
