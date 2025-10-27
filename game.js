@@ -5,8 +5,8 @@
 
 (() => {
   // ====== KONFIGURASI GAME (gunakan setelanmu) ======
-  const GRAVITY       = 0.40;  // jatuh lebih pelan
-  const JUMP_VELOCITY = -5.7;  // dorongan loncat
+  const GRAVITY       = 1.0;  // jatuh lebih pelan
+  const JUMP_VELOCITY = -10.0;  // dorongan loncat
   const PIPE_SPEED    = 4.0;   // kecepatan pipa
   const GAP_HEIGHT    = 150;   // celah
   const PIPE_WIDTH    = 60;    // lebar pipa
