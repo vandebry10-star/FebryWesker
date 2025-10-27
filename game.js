@@ -5,10 +5,10 @@
 
 (() => {
   // ====== KONFIGURASI GAME (gunakan setelanmu) ======
-  const GRAVITY       = 0.90;  // jatuh lebih pelan
-  const JUMP_VELOCITY = -9.7;  // dorongan loncat
-  const PIPE_SPEED    = 2.5;   // kecepatan pipa
-  const GAP_HEIGHT    = 160;   // celah
+  const GRAVITY       = 0.40;  // jatuh lebih pelan
+  const JUMP_VELOCITY = -5.7;  // dorongan loncat
+  const PIPE_SPEED    = 4.0;   // kecepatan pipa
+  const GAP_HEIGHT    = 150;   // celah
   const PIPE_WIDTH    = 60;    // lebar pipa
   const PIPE_SPACING  = 600;   // jarak antar pipa
   const REWARD_SCORE  = 75;    // ambang reward (teks di Game Over)
