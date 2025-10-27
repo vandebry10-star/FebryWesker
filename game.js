@@ -4,15 +4,15 @@
 */
 
 (() => {
-  // ====== KONFIGURASI GAME (gunakan setelanmu) ======
-  const GRAVITY       = 1.0;  // jatuh lebih pelan
-  const JUMP_VELOCITY = -5.0;  // dorongan loncat
-  const PIPE_SPEED    = 4.0;   // kecepatan pipa
-  const GAP_HEIGHT    = 150;   // celah
-  const PIPE_WIDTH    = 60;    // lebar pipa
-  const PIPE_SPACING  = 600;   // jarak antar pipa
-  const REWARD_SCORE  = 75;    // ambang reward (teks di Game Over)
-
+// ====== MODE SUPER HARD ======
+const GRAVITY       = 1.35;   // jatuh lebih cepat
+const JUMP_VELOCITY = -4.8;   // loncat susah dikontrol (sedikit lebih lemah)
+const PIPE_SPEED    = 7.2;    // pipa melaju jauh lebih cepat
+const GAP_HEIGHT    = 90;     // celah super sempit
+const PIPE_WIDTH    = 58;     // sedikit lebih tipis biar timing makin ketat
+const PIPE_SPACING  = 420;    // pipa makin rapat
+const REWARD_SCORE  = 50;    // ambang reward lebih tinggi
+  
   // ====== KANVAS & SKALA 9:16 ======
   const canvas = document.getElementById('game');
   const ctx = canvas.getContext('2d', { alpha:false });
