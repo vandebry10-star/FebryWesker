@@ -5,9 +5,9 @@
 
 (() => {
 // ====== MODE SUPER HARD ======
-const GRAVITY       = 1.20;   // jatuh lebih cepat
+const GRAVITY       = 1.35;   // jatuh lebih cepat
 const JUMP_VELOCITY = -10.0;   // loncat susah dikontrol (sedikit lebih lemah)
-const PIPE_SPEED    = 5.0;    // pipa melaju jauh lebih cepat
+const PIPE_SPEED    = 4.0;    // pipa melaju jauh lebih cepat
 const GAP_HEIGHT    = 125;     // celah super sempit
 const PIPE_WIDTH    = 60;     // sedikit lebih tipis biar timing makin ketat
 const PIPE_SPACING  = 500;    // pipa makin rapat
