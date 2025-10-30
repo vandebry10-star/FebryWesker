@@ -5,13 +5,13 @@
 
 (() => {
 // ====== MODE SUPER HARD ======
-const GRAVITY       = 1.35;   // jatuh lebih cepat
-const JUMP_VELOCITY = -10.0;   // loncat susah dikontrol (sedikit lebih lemah)
-const PIPE_SPEED    = 4.0;    // pipa melaju jauh lebih cepat
+const GRAVITY       = 1.0;   // jatuh lebih cepat
+const JUMP_VELOCITY = -9.0;   // loncat susah dikontrol (sedikit lebih lemah)
+const PIPE_SPEED    = 5.0;    // pipa melaju jauh lebih cepat
 const GAP_HEIGHT    = 125;     // celah super sempit
 const PIPE_WIDTH    = 60;     // sedikit lebih tipis biar timing makin ketat
 const PIPE_SPACING  = 500;    // pipa makin rapat
-const REWARD_SCORE  = 50;    // ambang reward lebih tinggi
+const REWARD_SCORE  = 75;    // ambang reward lebih tinggi
   
   // ====== KANVAS & SKALA 9:16 ======
   const canvas = document.getElementById('game');
