@@ -9,7 +9,7 @@
 - 👨‍💻 Developer: **FebryWesker**  
 - ⚙️ Focus: Smart Automation & Elegant System  
 - 🌐 Project: [Azbry-MD](https://github.com/FebryWesker/Azbry-MD)  
-- 💬 Motto: *"Bot bukan cuma alat, tapi partner digital yang hidup."*  
+- 💬 Motto: *"Siapa namanya, Dimana rumahnya"*  
 
 ---
 
@@ -17,10 +17,10 @@
 
 | Jenis | Kontak |
 |-------|--------|
-| 👑 **Owner** | [📱 WhatsApp](https://wa.me/6281510040802?text=Halo%20bang%20Azbry!) ・ [📧 Email](mailto:support@azbry.system) |
+| 👑 **Owner** | [📱 WhatsApp](https://wa.me/6281510040802?text=Halo%20bang%20Febry!) ・ [📧 Email](mailto:support@azbry.system) |
 | 🤖 **Bot Aktif** | [🌐 Klik untuk Chat Bot](https://wa.me/6285189988271?text=Hai%20Bot%20Azbry%20MD) |
-| 💬 **Instagram** | [lagi dibuat](https://instagram.com/) |
-| 🪄 **Website** | [azbry-system.web.app](https://azbry-system.web.app) |
+| 💬 **Instagram** | [Sedang dalam proses pembuatan](https://instagram.com/) |
+| 🪄 **Website Game** | [Azbry Minigame](https://azbryminigamess.vercel.app/) |
 | ☕ **Donasi & Dukungan** | (gada gabutuh duit) |
 
 > 🧠 **Catatan:**  
